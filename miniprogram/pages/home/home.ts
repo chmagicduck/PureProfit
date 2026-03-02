@@ -118,7 +118,7 @@ Page({
   /** 100ms 刷新回调 (节流: 每 5 次更新一次 UI，即 500ms) */
   onTick(payload: TickPayload) {
     const self = this as any
-    self._tickCount = (self._tickCount ?? 0) + 1
+    self._tickCount = (self._tickCount || 0) + 1
     if (self._tickCount % 5 !== 0) return
 
     const { earnings } = payload

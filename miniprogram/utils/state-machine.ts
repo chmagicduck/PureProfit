@@ -131,7 +131,7 @@ export class StateMachine {
       charging: '充电中',
       sleeping: '修仙中',
     }
-    return labels[state ?? this.state]
+    return labels[state || this.state]
   }
 
   /** 获取状态对应的颜色 */

@@ -1,0 +1,45 @@
+<!-- Step 2: 填写月薪 -->
+<view class="salary-page">
+  <view class="step-indicator">
+    <view class="step-dot active"></view>
+    <view class="step-line"></view>
+    <view class="step-dot"></view>
+    <view class="step-line"></view>
+    <view class="step-dot"></view>
+  </view>
+
+  <view class="page-header animate-fade-in-up">
+    <text class="page-title">设置你的月薪</text>
+    <text class="page-desc">这将用于计算你的实时秒薪收益</text>
+  </view>
+
+  <view class="input-area animate-fade-in-up">
+    <view class="input-wrapper">
+      <text class="currency-prefix">¥</text>
+      <input
+        class="salary-input"
+        type="digit"
+        placeholder="输入月薪金额"
+        placeholder-class="input-placeholder"
+        value="{{salaryStr}}"
+        bindinput="onSalaryInput"
+        focus="{{true}}"
+      />
+    </view>
+
+    <view class="rate-preview {{secondRate > 0 ? 'visible' : ''}}">
+      <text class="rate-label">当前秒薪</text>
+      <text class="rate-value">¥{{secondRateDisplay}}</text>
+    </view>
+  </view>
+
+  <view class="bottom-area">
+    <button
+      class="btn-next tap-active {{canNext ? '' : 'disabled'}}"
+      bindtap="onNext"
+      disabled="{{!canNext}}"
+    >
+      下一步
+    </button>
+  </view>
+</view>

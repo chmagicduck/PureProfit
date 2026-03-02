@@ -1,0 +1,12 @@
+<!-- 财富战报 -->
+<view class="report-page">
+  <view class="page-navbar" style="padding-top: {{statusBarHeight}}px;">
+    <text class="page-navbar-title">财富战报</text>
+  </view>
+
+  <view class="placeholder-content">
+    <view class="placeholder-icon">📊</view>
+    <text class="placeholder-title">战报生成中</text>
+    <text class="placeholder-desc">持续搬砖，数据积累后将自动生成战报</text>
+  </view>
+</view>

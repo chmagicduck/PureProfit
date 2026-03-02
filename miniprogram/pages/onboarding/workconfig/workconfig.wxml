@@ -1,0 +1,141 @@
+<!-- Step 3: 配置工时 -->
+<view class="workconfig-page">
+  <view class="step-indicator">
+    <view class="step-dot done"></view>
+    <view class="step-line filled"></view>
+    <view class="step-dot active"></view>
+    <view class="step-line"></view>
+    <view class="step-dot"></view>
+  </view>
+
+  <view class="page-header animate-fade-in-up">
+    <text class="page-title">配置你的工时</text>
+    <text class="page-desc">精准设置，让每一秒都有价值</text>
+  </view>
+
+  <scroll-view scroll-y class="config-list">
+    <!-- 上班时间 -->
+    <view class="config-item tap-active" bindtap="pickStartTime">
+      <view class="config-left">
+        <view class="config-icon icon-clock">
+          <text class="icon-text">⏰</text>
+        </view>
+        <text class="config-label">上班时间</text>
+      </view>
+      <view class="config-right">
+        <text class="config-value">{{startTime}}</text>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+
+    <!-- 下班时间 -->
+    <view class="config-item tap-active" bindtap="pickEndTime">
+      <view class="config-left">
+        <view class="config-icon icon-sunset">
+          <text class="icon-text">🌅</text>
+        </view>
+        <text class="config-label">下班时间</text>
+      </view>
+      <view class="config-right">
+        <text class="config-value">{{endTime}}</text>
+        <text class="arrow">›</text>
+      </view>
+    </view>
+
+    <!-- 午休时长 -->
+    <view class="config-item">
+      <view class="config-left">
+        <view class="config-icon icon-coffee">
+          <text class="icon-text">☕</text>
+        </view>
+        <text class="config-label">午休时长</text>
+      </view>
+      <view class="config-right">
+        <text class="slider-value">{{lunchBreakHours}}h</text>
+      </view>
+    </view>
+    <view class="slider-row">
+      <slider
+        min="0"
+        max="2"
+        step="0.5"
+        value="{{lunchBreakHours}}"
+        activeColor="{{colorGold}}"
+        backgroundColor="rgba(26,29,46,0.06)"
+        block-size="24"
+        bindchange="onLunchChange"
+      />
+    </view>
+
+    <!-- 工作日模式 -->
+    <view class="config-item no-border">
+      <view class="config-left">
+        <view class="config-icon icon-calendar">
+          <text class="icon-text">📅</text>
+        </view>
+        <text class="config-label">工作日模式</text>
+      </view>
+    </view>
+    <view class="pill-group">
+      <view
+        class="pill {{workDayMode === 'double' ? 'active' : ''}} tap-active"
+        bindtap="setWorkDayMode"
+        data-mode="double"
+      >
+        周末双休
+      </view>
+      <view
+        class="pill {{workDayMode === 'alternate' ? 'active' : ''}} tap-active"
+        bindtap="setWorkDayMode"
+        data-mode="alternate"
+      >
+        大小周
+      </view>
+      <view
+        class="pill {{workDayMode === 'single' ? 'active' : ''}} tap-active"
+        bindtap="setWorkDayMode"
+        data-mode="single"
+      >
+        单休
+      </view>
+    </view>
+
+    <!-- 发薪日 -->
+    <view class="config-item" style="margin-top: 20rpx;">
+      <view class="config-left">
+        <view class="config-icon icon-money">
+          <text class="icon-text">💰</text>
+        </view>
+        <text class="config-label">发薪日</text>
+      </view>
+      <view class="config-right">
+        <input
+          class="payday-input"
+          type="number"
+          value="{{payDay}}"
+          bindinput="onPayDayInput"
+          placeholder="15"
+        />
+        <text class="config-unit">号</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="bottom-area">
+    <button class="btn-next tap-active" bindtap="onNext">完成配置</button>
+  </view>
+</view>
+
+<!-- 时间选择器 -->
+<picker
+  mode="time"
+  value="{{startTime}}"
+  bindchange="onStartTimeChange"
+  wx:if="{{showStartPicker}}"
+/>
+<picker
+  mode="time"
+  value="{{endTime}}"
+  bindchange="onEndTimeChange"
+  wx:if="{{showEndPicker}}"
+/>

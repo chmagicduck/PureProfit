@@ -1,0 +1,155 @@
+.salary-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  padding: 0 60rpx;
+  padding-top: 180rpx;
+}
+
+/* 步骤指示器 */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80rpx;
+}
+
+.step-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: rgba(26, 29, 46, 0.1);
+}
+
+.step-dot.active {
+  width: 40rpx;
+  border-radius: 100rpx;
+  background: var(--color-gold);
+}
+
+.step-line {
+  width: 40rpx;
+  height: 4rpx;
+  background: rgba(26, 29, 46, 0.06);
+  margin: 0 12rpx;
+}
+
+/* 页面标题 */
+.page-header {
+  margin-bottom: 80rpx;
+}
+
+.page-title {
+  display: block;
+  font-size: 52rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 16rpx;
+}
+
+.page-desc {
+  display: block;
+  font-size: 28rpx;
+  color: var(--color-text-secondary);
+}
+
+/* 输入区域 */
+.input-area {
+  flex: 1;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 40rpx 48rpx;
+  box-shadow: var(--shadow-card);
+}
+
+.currency-prefix {
+  font-size: 56rpx;
+  font-weight: 900;
+  color: var(--color-gold);
+  margin-right: 20rpx;
+  font-style: italic;
+}
+
+.salary-input {
+  flex: 1;
+  font-size: 56rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.input-placeholder {
+  color: rgba(26, 29, 46, 0.15);
+  font-weight: 400;
+}
+
+/* 秒薪预览 */
+.rate-preview {
+  margin-top: 40rpx;
+  padding: 32rpx 40rpx;
+  background: var(--color-gold-light);
+  border-radius: var(--radius-md);
+  border: 2rpx solid rgba(255, 184, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateY(20rpx);
+  transition: all 0.4s ease-out;
+}
+
+.rate-preview.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rate-label {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: rgba(255, 184, 0, 0.8);
+}
+
+.rate-value {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: var(--color-gold);
+  letter-spacing: -0.02em;
+}
+
+/* 底部按钮 */
+.bottom-area {
+  padding: 60rpx 0 100rpx;
+}
+
+.btn-next {
+  width: 100%;
+  background: var(--color-gold);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100rpx;
+  padding: 32rpx 0;
+  font-size: 34rpx;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  box-shadow:
+    0 16rpx 48rpx rgba(255, 184, 0, 0.3),
+    0 4rpx 12rpx rgba(255, 184, 0, 0.15);
+}
+
+.btn-next.disabled {
+  opacity: 0.4;
+  box-shadow: none;
+}
+
+.btn-next::after {
+  border: none;
+}

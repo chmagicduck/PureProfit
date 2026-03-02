@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/report/report",
+    "pages/lab/lab",
+    "pages/profile/profile",
+    "pages/onboarding/welcome/welcome",
+    "pages/onboarding/salary/salary",
+    "pages/onboarding/workconfig/workconfig",
+    "pages/onboarding/success/success"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#FDFEFE",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#94A3B8",
+    "selectedColor": "#1A1D2E",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "搞钱中心"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "财富战报"
+      },
+      {
+        "pagePath": "pages/lab/lab",
+        "text": "实验室"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

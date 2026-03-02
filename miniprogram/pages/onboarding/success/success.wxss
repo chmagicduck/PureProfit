@@ -1,0 +1,155 @@
+.success-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 粒子效果 */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  top: -60rpx;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-60rpx) rotate(0deg);
+    opacity: 1;
+  }
+  80% { opacity: 0.6; }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.particle-coin {
+  font-size: 48rpx;
+  font-weight: 900;
+  color: var(--color-gold);
+  opacity: 0.3;
+}
+
+/* 内容区 */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 80rpx;
+}
+
+.success-icon {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-green), #10B981);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48rpx;
+  box-shadow:
+    0 20rpx 60rpx rgba(0, 195, 139, 0.3),
+    0 4rpx 20rpx rgba(0, 195, 139, 0.15);
+}
+
+.check-mark {
+  font-size: 72rpx;
+  color: #FFFFFF;
+  font-weight: 900;
+}
+
+.success-title {
+  font-size: 52rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  margin-bottom: 16rpx;
+}
+
+.success-desc {
+  font-size: 28rpx;
+  color: var(--color-text-secondary);
+  margin-bottom: 64rpx;
+}
+
+/* 费率卡片 */
+.rate-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 40rpx 20rpx;
+  box-shadow: var(--shadow-card);
+}
+
+.rate-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rate-label {
+  font-size: 22rpx;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: 12rpx;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.rate-num {
+  font-size: 32rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.rate-divider {
+  width: 2rpx;
+  height: 60rpx;
+  background: rgba(26, 29, 46, 0.06);
+}
+
+/* 底部 */
+.bottom-area {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 80rpx 80rpx 100rpx;
+}
+
+.btn-start {
+  width: 100%;
+  background: var(--color-gold);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100rpx;
+  padding: 32rpx 0;
+  font-size: 36rpx;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  box-shadow:
+    0 16rpx 48rpx rgba(255, 184, 0, 0.35),
+    0 4rpx 12rpx rgba(255, 184, 0, 0.2);
+}
+
+.btn-start::after {
+  border: none;
+}

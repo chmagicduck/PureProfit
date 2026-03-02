@@ -1,0 +1,39 @@
+<!-- Step 4: 完成激励 -->
+<view class="success-page">
+  <!-- 金币雨粒子效果 (纯 CSS 实现) -->
+  <view class="particles">
+    <view class="particle" wx:for="{{particles}}" wx:key="index"
+      style="left: {{item.left}}%; animation-delay: {{item.delay}}s; animation-duration: {{item.duration}}s;">
+      <text class="particle-coin">¥</text>
+    </view>
+  </view>
+
+  <view class="content animate-fade-in-up">
+    <view class="success-icon">
+      <text class="check-mark">✓</text>
+    </view>
+    <text class="success-title">配置成功！</text>
+    <text class="success-desc">你的纯利引擎已启动</text>
+
+    <view class="rate-card">
+      <view class="rate-item">
+        <text class="rate-label">时薪</text>
+        <text class="rate-num">¥{{hourlyRate}}</text>
+      </view>
+      <view class="rate-divider"></view>
+      <view class="rate-item">
+        <text class="rate-label">分薪</text>
+        <text class="rate-num">¥{{minuteRate}}</text>
+      </view>
+      <view class="rate-divider"></view>
+      <view class="rate-item">
+        <text class="rate-label">秒薪</text>
+        <text class="rate-num text-gold">¥{{secondRate}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-area animate-fade-in-up">
+    <button class="btn-start tap-active" bindtap="onStart">开始搞钱</button>
+  </view>
+</view>

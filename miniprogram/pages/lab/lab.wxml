@@ -1,0 +1,12 @@
+<!-- 实验室 -->
+<view class="lab-page">
+  <view class="page-navbar" style="padding-top: {{statusBarHeight}}px;">
+    <text class="page-navbar-title">实验室</text>
+  </view>
+
+  <view class="placeholder-content">
+    <view class="placeholder-icon">🧪</view>
+    <text class="placeholder-title">实验室建设中</text>
+    <text class="placeholder-desc">更多有趣的搞钱工具正在研发中</text>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<!-- Step 1: 欢迎页 -->
+<view class="welcome-page">
+  <!-- 顶部 60% 动画占位区 -->
+  <view class="hero-area">
+    <view class="coin-placeholder animate-breathe">
+      <view class="coin-inner">
+        <text class="coin-symbol">¥</text>
+      </view>
+      <view class="coin-glow"></view>
+    </view>
+  </view>
+
+  <!-- 底部 40% 内容区 -->
+  <view class="content-area animate-fade-in-up">
+    <view class="title">开启你的纯利时刻</view>
+    <view class="desc">让每一秒搬砖都变得有据可循</view>
+    <button class="btn-start tap-active" bindtap="onStart">开始配置</button>
+  </view>
+</view>

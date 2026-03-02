@@ -1,0 +1,146 @@
+/**
+ * 全局样式 - 纯利时刻
+ * 品牌色: 能量金 #FFB800, 深空黑 #1A1D2E, 生机绿 #00C38B
+ */
+
+page {
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", sans-serif;
+  background-color: #FDFEFE;
+  color: rgba(26, 29, 46, 0.9);
+  font-size: 28rpx;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== CSS 变量 ===== */
+page {
+  --color-gold: #FFB800;
+  --color-gold-light: rgba(255, 184, 0, 0.1);
+  --color-gold-glow: rgba(255, 184, 0, 0.25);
+  --color-dark: #1A1D2E;
+  --color-dark-deep: #0F172A;
+  --color-green: #00C38B;
+  --color-green-light: rgba(0, 195, 139, 0.1);
+  --color-blue: #3B82F6;
+  --color-rose: #F87171;
+  --color-text-primary: rgba(26, 29, 46, 0.9);
+  --color-text-secondary: rgba(26, 29, 46, 0.45);
+  --color-text-hint: rgba(26, 29, 46, 0.1);
+  --color-bg: #FDFEFE;
+  --color-card: rgba(255, 255, 255, 0.6);
+  --radius-lg: 64rpx;
+  --radius-md: 48rpx;
+  --radius-sm: 24rpx;
+  --radius-xs: 16rpx;
+  --shadow-card: 0 20rpx 80rpx -20rpx rgba(0,0,0,0.05), 0 4rpx 20rpx rgba(0,0,0,0.02);
+  --shadow-dark: 0 40rpx 80rpx rgba(0,0,0,0.2);
+}
+
+/* ===== 通用工具类 ===== */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.flex-1 { flex: 1; }
+.text-center { text-align: center; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.overflow-hidden { overflow: hidden; }
+.w-full { width: 100%; }
+
+/* ===== 文字层级 ===== */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-hint { color: var(--color-text-hint); }
+.text-gold { color: var(--color-gold); }
+.text-green { color: var(--color-green); }
+.text-white { color: #FFFFFF; }
+
+/* ===== 字重 ===== */
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-bold { font-weight: 700; }
+.font-black { font-weight: 900; }
+
+/* ===== 动画 ===== */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* ===== 卡片基础 ===== */
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+}
+
+.card-dark {
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-dark);
+  color: #FFFFFF;
+}
+
+/* ===== 按钮基础 ===== */
+.btn-primary {
+  background: var(--color-gold);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100rpx;
+  padding: 28rpx 64rpx;
+  font-size: 32rpx;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  box-shadow: 0 16rpx 40rpx rgba(255, 184, 0, 0.3);
+}
+
+.btn-primary::after {
+  border: none;
+}
+
+/* ===== 点击反馈 ===== */
+.tap-active {
+  transition: transform 0.2s ease-out;
+}
+
+.tap-active:active {
+  transform: scale(0.96);
+}

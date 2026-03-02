@@ -1,0 +1,41 @@
+.lab-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.page-navbar {
+  padding: 0 32rpx 24rpx;
+}
+
+.page-navbar-title {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+}
+
+.placeholder-icon {
+  font-size: 100rpx;
+  margin-bottom: 32rpx;
+}
+
+.placeholder-title {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  margin-bottom: 16rpx;
+}
+
+.placeholder-desc {
+  font-size: 26rpx;
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: 0 80rpx;
+}

@@ -1,0 +1,187 @@
+.profile-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+  padding-bottom: 120rpx;
+}
+
+.page-navbar {
+  padding: 0 32rpx 24rpx;
+}
+
+.page-navbar-title {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+}
+
+/* 用户信息头 */
+.user-header {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 48rpx;
+}
+
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(241, 245, 249, 1), rgba(226, 232, 240, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32rpx;
+  box-shadow: var(--shadow-card);
+}
+
+.avatar-emoji {
+  font-size: 48rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  margin-bottom: 8rpx;
+}
+
+.user-id {
+  font-size: 24rpx;
+  color: var(--color-text-secondary);
+}
+
+/* 薪资概览 */
+.salary-overview {
+  margin: 16rpx 32rpx 32rpx;
+  padding: 40rpx 24rpx;
+}
+
+.overview-row {
+  display: flex;
+  align-items: center;
+}
+
+.overview-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview-label {
+  font-size: 22rpx;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: 12rpx;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.overview-value {
+  font-size: 30rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.overview-divider {
+  width: 2rpx;
+  height: 56rpx;
+  background: rgba(26, 29, 46, 0.06);
+}
+
+/* 功能菜单 */
+.menu-section {
+  margin: 0 32rpx;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20rpx);
+  border-radius: var(--radius-lg);
+  border: 2rpx solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36rpx 40rpx;
+  border-bottom: 2rpx solid rgba(26, 29, 46, 0.04);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.icon-salary { background: rgba(255, 184, 0, 0.1); }
+.icon-theme { background: rgba(168, 85, 247, 0.1); }
+.icon-bell { background: rgba(59, 130, 246, 0.1); }
+
+.icon-text {
+  font-size: 28rpx;
+}
+
+.menu-label {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.menu-arrow {
+  font-size: 36rpx;
+  color: var(--color-text-secondary);
+}
+
+/* 危险操作区 */
+.danger-zone {
+  margin: 60rpx 32rpx 0;
+  text-align: center;
+}
+
+.btn-danger {
+  background: transparent;
+  color: rgba(148, 163, 184, 1);
+  font-size: 28rpx;
+  font-weight: 500;
+  border: none;
+  padding: 24rpx 0;
+}
+
+.btn-danger::after {
+  border: none;
+}
+
+.btn-danger:active {
+  color: #EF4444;
+}
+
+/* 页脚 */
+.footer {
+  text-align: center;
+  margin-top: 60rpx;
+  padding-bottom: 40rpx;
+}
+
+.footer-text {
+  font-size: 22rpx;
+  color: rgba(26, 29, 46, 0.15);
+}

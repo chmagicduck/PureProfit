@@ -1,0 +1,207 @@
+.workconfig-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  padding: 0 48rpx;
+  padding-top: 160rpx;
+}
+
+/* 步骤指示器 */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60rpx;
+}
+
+.step-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: rgba(26, 29, 46, 0.1);
+}
+
+.step-dot.active {
+  width: 40rpx;
+  border-radius: 100rpx;
+  background: var(--color-gold);
+}
+
+.step-dot.done {
+  background: var(--color-green);
+}
+
+.step-line {
+  width: 40rpx;
+  height: 4rpx;
+  background: rgba(26, 29, 46, 0.06);
+  margin: 0 12rpx;
+}
+
+.step-line.filled {
+  background: var(--color-green);
+}
+
+/* 页面标题 */
+.page-header {
+  margin-bottom: 48rpx;
+}
+
+.page-title {
+  display: block;
+  font-size: 48rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 12rpx;
+}
+
+.page-desc {
+  display: block;
+  font-size: 26rpx;
+  color: var(--color-text-secondary);
+}
+
+/* 配置列表 */
+.config-list {
+  flex: 1;
+}
+
+.config-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 0;
+  border-bottom: 2rpx solid rgba(26, 29, 46, 0.04);
+}
+
+.config-item.no-border {
+  border-bottom: none;
+  padding-bottom: 16rpx;
+}
+
+.config-left {
+  display: flex;
+  align-items: center;
+}
+
+.config-icon {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.icon-clock { background: rgba(59, 130, 246, 0.1); }
+.icon-sunset { background: rgba(249, 115, 22, 0.1); }
+.icon-coffee { background: rgba(168, 85, 247, 0.1); }
+.icon-calendar { background: rgba(0, 195, 139, 0.1); }
+.icon-money { background: rgba(255, 184, 0, 0.1); }
+
+.icon-text {
+  font-size: 32rpx;
+}
+
+.config-label {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.config-right {
+  display: flex;
+  align-items: center;
+}
+
+.config-value {
+  font-size: 30rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.arrow {
+  font-size: 36rpx;
+  color: var(--color-text-secondary);
+  margin-left: 12rpx;
+}
+
+.slider-value {
+  font-size: 28rpx;
+  font-weight: 900;
+  color: var(--color-gold);
+}
+
+.slider-row {
+  padding: 0 16rpx 24rpx;
+}
+
+/* 胶囊选择器 */
+.pill-group {
+  display: flex;
+  gap: 16rpx;
+  padding-bottom: 24rpx;
+}
+
+.pill {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 100rpx;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  background: rgba(26, 29, 46, 0.04);
+  border: 2rpx solid transparent;
+  transition: all 0.3s ease;
+}
+
+.pill.active {
+  color: var(--color-gold);
+  background: var(--color-gold-light);
+  border-color: rgba(255, 184, 0, 0.2);
+  font-weight: 900;
+}
+
+/* 发薪日输入 */
+.payday-input {
+  width: 80rpx;
+  text-align: right;
+  font-size: 30rpx;
+  font-weight: 900;
+  color: var(--color-text-primary);
+}
+
+.config-unit {
+  font-size: 26rpx;
+  color: var(--color-text-secondary);
+  margin-left: 8rpx;
+}
+
+/* 底部按钮 */
+.bottom-area {
+  padding: 40rpx 0 100rpx;
+}
+
+.btn-next {
+  width: 100%;
+  background: var(--color-gold);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100rpx;
+  padding: 32rpx 0;
+  font-size: 34rpx;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  box-shadow:
+    0 16rpx 48rpx rgba(255, 184, 0, 0.3),
+    0 4rpx 12rpx rgba(255, 184, 0, 0.15);
+}
+
+.btn-next::after {
+  border: none;
+}

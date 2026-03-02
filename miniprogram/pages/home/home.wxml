@@ -1,0 +1,184 @@
+<!-- 首页: 搞钱中心 -->
+<view class="home-page">
+  <!-- 未完成引导时跳转 -->
+  <block wx:if="{{!isOnboarded}}">
+    <view class="empty-state">
+      <text class="empty-hint">正在跳转配置页...</text>
+    </view>
+  </block>
+
+  <block wx:else>
+    <!-- 1. 自定义导航栏 -->
+    <view class="navbar" style="padding-top: {{statusBarHeight}}px;">
+      <view class="nav-content">
+        <view class="nav-left">
+          <view class="logo-icon">
+            <text class="logo-bolt">⚡</text>
+          </view>
+          <view class="logo-text-group">
+            <text class="logo-text">纯利时刻</text>
+            <view class="engine-status">
+              <view class="status-dot"></view>
+              <text class="status-text">搞钱引擎运行中</text>
+            </view>
+          </view>
+        </view>
+        <view class="nav-capsule-placeholder"></view>
+      </view>
+
+      <!-- 用户问候条 -->
+      <view class="greeting-bar tap-active" bindtap="goProfile">
+        <view class="greeting-left">
+          <view class="avatar-circle">
+            <text class="avatar-icon">👤</text>
+          </view>
+          <text class="greeting-text">{{greeting}}，尊贵的打工人</text>
+        </view>
+        <view class="greeting-right">
+          <text class="setting-text">账户设置</text>
+          <text class="setting-arrow">›</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 2. 英雄区: 今日实时总额 -->
+    <view class="hero-section">
+      <view class="hero-pill">
+        <text class="hero-pill-icon">✨</text>
+        <text class="hero-pill-text">今日实时纯利总额</text>
+      </view>
+
+      <view class="hero-amount-wrapper">
+        <view class="hero-glow"></view>
+        <view class="hero-amount">
+          <text class="hero-currency">¥</text>
+          <text class="hero-number">{{totalEarningsDisplay}}</text>
+        </view>
+      </view>
+
+      <!-- 收益分项 -->
+      <view class="earnings-split card">
+        <view class="split-item">
+          <text class="split-label">搬砖所得</text>
+          <text class="split-value">¥{{workEarningsDisplay}}</text>
+        </view>
+        <view class="split-divider"></view>
+        <view class="split-item">
+          <text class="split-label split-label-green">
+            白嫖收益
+            <view class="ping-dot"></view>
+          </text>
+          <text class="split-value split-value-green">¥{{slackEarningsDisplay}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 3. 本月累计 -->
+    <view class="month-card card-dark" style="margin: 0 32rpx;">
+      <view class="month-header">
+        <view class="month-left">
+          <text class="month-label">本月搞钱累计</text>
+          <text class="month-amount">¥{{monthTotalDisplay}}</text>
+        </view>
+        <view class="month-badge">
+          <text class="badge-text">目标 {{monthProgress}}%</text>
+        </view>
+      </view>
+      <view class="month-progress-track">
+        <view class="month-progress-fill" style="width: {{monthProgressWidth}}%;"></view>
+      </view>
+    </view>
+
+    <!-- 4. 状态模式药丸 -->
+    <view class="state-pills" style="margin: 32rpx;">
+      <view class="pills-container">
+        <view
+          class="state-pill tap-active {{currentState === 'charging' ? 'active charging' : ''}}"
+          bindtap="switchState"
+          data-state="charging"
+        >充电中</view>
+        <view
+          class="state-pill tap-active {{currentState === 'working' ? 'active working' : ''}}"
+          bindtap="switchState"
+          data-state="working"
+        >搬砖中</view>
+        <view
+          class="state-pill tap-active {{currentState === 'slacking' ? 'active slacking' : ''}}"
+          bindtap="switchState"
+          data-state="slacking"
+        >白嫖中</view>
+        <view
+          class="state-pill tap-active {{currentState === 'sleeping' ? 'active sleeping' : ''}}"
+          bindtap="switchState"
+          data-state="sleeping"
+        >修仙中</view>
+      </view>
+    </view>
+
+    <!-- 5. 热力图 -->
+    <view class="heatmap-section" style="margin: 0 32rpx;">
+      <view class="heatmap-header">
+        <text class="heatmap-title">今日搞钱状态热力图</text>
+      </view>
+      <view class="heatmap-bar">
+        <view class="heat-seg heat-work" style="width: {{heatWork}}%;"></view>
+        <view class="heat-gap"></view>
+        <view class="heat-seg heat-slack" style="width: {{heatSlack}}%;"></view>
+        <view class="heat-gap"></view>
+        <view class="heat-seg heat-charge" style="width: {{heatCharge}}%;"></view>
+        <view class="heat-gap"></view>
+        <view class="heat-seg heat-sleep" style="width: {{heatSleep}}%;"></view>
+      </view>
+      <view class="heatmap-legend">
+        <view class="legend-item">
+          <view class="legend-dot dot-work"></view>
+          <text class="legend-text">搬砖 {{workHours}}h</text>
+        </view>
+        <view class="legend-item">
+          <view class="legend-dot dot-slack"></view>
+          <text class="legend-text">白嫖 {{slackHours}}h</text>
+        </view>
+        <view class="legend-item">
+          <view class="legend-dot dot-charge"></view>
+          <text class="legend-text">充电 {{chargeHours}}h</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 6. 倒计时矩阵 -->
+    <view class="countdown-grid" style="margin: 32rpx; margin-bottom: 200rpx;">
+      <!-- 下班倒计时 (跨列) -->
+      <view class="countdown-main card tap-active">
+        <view class="countdown-main-left">
+          <view class="countdown-icon-box">
+            <text class="countdown-icon">↗</text>
+          </view>
+          <view class="countdown-info">
+            <text class="countdown-label">{{isOffWork ? '自由时间已开启' : '离下班/解放还有'}}</text>
+            <text class="countdown-time">{{countdownDisplay}}</text>
+          </view>
+        </view>
+        <view class="progress-ring">
+          <view class="ring-text">{{workdayProgress}}%</view>
+        </view>
+      </view>
+
+      <!-- 底部双卡 -->
+      <view class="countdown-duo">
+        <view class="duo-card card tap-active">
+          <text class="duo-icon">📅</text>
+          <text class="duo-label">发薪倒计</text>
+          <view class="duo-value-row">
+            <text class="duo-number">{{payDays}}</text>
+            <text class="duo-unit">DAYS</text>
+          </view>
+        </view>
+        <view class="duo-card duo-green card tap-active">
+          <text class="duo-icon">⏰</text>
+          <text class="duo-label">周末进度</text>
+          <text class="duo-hint">{{weekendHint}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
